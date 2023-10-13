@@ -422,3 +422,5 @@ fabric.properties
 /.idea/
 /appsettings.json
 /appsettings.Development.json
+/localhost.pem
+/localhost-key.pem
