@@ -36,8 +36,14 @@ if (!app.Environment.IsDevelopment())
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    var swaggerBasePath = "api";
+    
+    app.UseSwagger(x => x.RouteTemplate = $"{swaggerBasePath}/swagger/{{documentName}}/swagger.json");
+    app.UseSwaggerUI(x =>
+    {
+        x.SwaggerEndpoint($"../swagger/v1/swagger.json", "JewelryFlashCards");
+        x.RoutePrefix = $"{swaggerBasePath}/swagger";
+    });
 }
 
 app.UseHttpLogging();
