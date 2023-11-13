@@ -7,10 +7,12 @@ namespace JewelryFlashCards.Controllers;
 public class JewelryController : BaseController
 {
     public JewelryController(ILogger<JewelryController> logger)
-        : base(logger) { }
+        : base(logger)
+    {
+    }
 
     [HttpGet]
-    [Route("get-anatometal-jewelry")]
+    [Route("anatometal")]
     public async Task<IActionResult> GetAnatometalJewelry()
     {
         var config = Configuration.Default.WithDefaultLoader();
