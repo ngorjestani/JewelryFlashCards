@@ -33,6 +33,10 @@ public class JewelryController : BaseController
             )
             .ToList();
 
-        return Ok(jewelryList);
+        var random = new Random();
+
+        var randomIndex = random.Next(0, jewelryList.Count);
+
+        return Ok(jewelryList[randomIndex]);
     }
 }
